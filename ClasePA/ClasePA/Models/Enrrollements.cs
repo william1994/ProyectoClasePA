@@ -7,15 +7,15 @@ namespace ClasePA.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int EnrrollementsId { get; set; }
+        public int EnrrollementId { get; set; }
 
         public int CourseID { get; set; }
 
-        public int StudentID    { get; set; }
+        public int StudentID { get; set; }
 
-        public Course Courese { get; set; }
+        public Course Course { get; set; }
 
-        public Students Students { get; set; }
+        public Students Student { get; set; }
 
     }
 }

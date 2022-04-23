@@ -15,6 +15,7 @@ namespace ClasePA.Models
 
         public DateTime EnrrollmentsDate { get; set; }
 
+        //helper que ayudara a crear listados type Dycnamic 
         public ICollection<Enrrollements> Enrrollements { get; set; }
     }
 }
