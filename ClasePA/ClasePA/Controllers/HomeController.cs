@@ -12,8 +12,6 @@ namespace ClasePA.Controllers
 
 
         private IEnrrollements _enrrollements;
-
-
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger, IEnrrollements enrrollements)
@@ -24,9 +22,12 @@ namespace ClasePA.Controllers
 
         public IActionResult Index()
         {
-            _enrrollements.
 
-            return View();
+          var  getInnerJoin= _enrrollements.GetInnerJoin().ToList();
+
+            _=getInnerJoin;
+
+            return View(getInnerJoin);
         }
 
         public IActionResult Privacy()

@@ -15,7 +15,8 @@ builder.Services.AddDbContext<AplicationDBContext>(options =>
 options.UseSqlServer("Server=.;Database=Escuela; TrustServerCertificate=true; Trusted_Connection=true; Connection Timeout= 30; Integrated Security=true; Persist Security Info= false; Encrypt= true; MultipleActiveResultSets=true;")
 
 );
-
+//
+           // Inyecion de la depencia
         builder.Services.AddTransient<IEnrrollements, ErrollementsRepository>();
 
 

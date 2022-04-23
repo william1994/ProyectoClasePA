@@ -5,6 +5,6 @@ namespace ClasePA.Service
     public interface IEnrrollements
     {
 
-       // IEnumerable<Enrrollements> GetInnerJoin();
+        IEnumerable<Enrrollements> GetInnerJoin();
     }
 }

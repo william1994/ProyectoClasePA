@@ -18,5 +18,6 @@ namespace ClasePA.Models
         //Esta instancia nos permite poder acceder a la informacion de la tabla student
         public Students Student { get; set; }
 
+
     }
 }
