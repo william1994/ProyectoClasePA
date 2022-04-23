@@ -1,20 +1,31 @@
 ﻿using ClasePA.Models;
+using ClasePA.Service;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace ClasePA.Controllers
 {
+
+   
     public class HomeController : Controller
     {
+
+
+        private IEnrrollements _enrrollements;
+
+
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IEnrrollements enrrollements)
         {
+            _enrrollements = enrrollements;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
+            _enrrollements.
+
             return View();
         }
 

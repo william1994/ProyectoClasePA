@@ -1,4 +1,6 @@
 using ClasePA.Data;
+using ClasePA.Repository;
+using ClasePA.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,8 @@ builder.Services.AddDbContext<AplicationDBContext>(options =>
 options.UseSqlServer("Server=.;Database=Escuela; TrustServerCertificate=true; Trusted_Connection=true; Connection Timeout= 30; Integrated Security=true; Persist Security Info= false; Encrypt= true; MultipleActiveResultSets=true;")
 
 );
+
+        builder.Services.AddTransient<IEnrrollements, ErrollementsRepository>();
 
 
 var app = builder.Build();
