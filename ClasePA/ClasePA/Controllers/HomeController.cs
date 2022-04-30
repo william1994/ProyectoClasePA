@@ -36,13 +36,18 @@ namespace ClasePA.Controllers
                                from Estudiante in bd.Students
                                from relacion in bd.Enrrollements
 
+
+                               where relacion.StudentID == Estudiante.StudentId 
+                               &&
+                               relacion.CourseID == Curso.CourseId
                                select new
                                {
 
                                    CusoNombre = Curso.Title,
                                    NombreSt = Estudiante.FirsName,
                                    RelaCuso = relacion.CourseID,
-                                   RelacionSTC = relacion.StudentID
+                                   RelacionSTC = relacion.StudentID,
+                                   relacionId = relacion.EnrrollementId
                                };
 
             ViewBag.inner = getInnerJoin;
