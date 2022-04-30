@@ -21,6 +21,8 @@ namespace ClasePA.Repository
                 .Include(c => c.Course).
                 ToList();
 
+            //Linq
+
             return Join;
         }
     }

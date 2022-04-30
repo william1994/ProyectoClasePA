@@ -23,14 +23,24 @@
 
         <tbody>
 
-        @foreach(var iteracion in Model)
+        @foreach (var iterar in ViewBag.inner)
+        {
+            <tr>
+
+                <td>@iterar.CusoNombre</td>
+                <td>@iterar.NombreSt</td>
+
+            </tr>    
+        }
+
+       @* @foreach(var iteracion in Model)
         {
             <tr>
                 <td>@iteracion.EnrrollementId</td>
                 <td>@iteracion.Student.FirsName</td>
                 <td>@iteracion.Course.Title</td>
             </tr>
-        }
+        }*@
         </tbody>
     
 </table>

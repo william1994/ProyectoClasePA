@@ -1,4 +1,5 @@
-﻿using ClasePA.Models;
+﻿using ClasePA.Data;
+using ClasePA.Models;
 using ClasePA.Service;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -13,21 +14,42 @@ namespace ClasePA.Controllers
 
         private IEnrrollements _enrrollements;
         private readonly ILogger<HomeController> _logger;
+        private AplicationDBContext bd;
 
-        public HomeController(ILogger<HomeController> logger, IEnrrollements enrrollements)
+        public HomeController(ILogger<HomeController> logger, IEnrrollements enrrollements, AplicationDBContext _bd)
         {
             _enrrollements = enrrollements;
             _logger = logger;
+            bd = _bd;
+
         }
 
         public IActionResult Index()
         {
 
-          var  getInnerJoin= _enrrollements.GetInnerJoin().ToList();
+            //var  getInnerJoin= _enrrollements.GetInnerJoin().ToList();
 
-            _=getInnerJoin;
+            //  _=getInnerJoin;
 
-            return View(getInnerJoin);
+            //Linq cosulta 
+            var getInnerJoin = from Curso in bd.Courses
+                               from Estudiante in bd.Students
+                               from relacion in bd.Enrrollements
+
+                               select new
+                               {
+
+                                   CusoNombre = Curso.Title,
+                                   NombreSt = Estudiante.FirsName,
+                                   RelaCuso = relacion.CourseID,
+                                   RelacionSTC = relacion.StudentID
+                               };
+
+            ViewBag.inner = getInnerJoin;
+
+
+
+            return View();
         }
 
         public IActionResult Privacy()
