@@ -2,6 +2,7 @@
 using ClasePA.Models;
 using ClasePA.Service;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace ClasePA.Controllers
@@ -37,7 +38,7 @@ namespace ClasePA.Controllers
                                from relacion in bd.Enrrollements
 
 
-                               where relacion.StudentID == Estudiante.StudentId 
+                               where relacion.StudentID == Estudiante.StudentId
                                &&
                                relacion.CourseID == Curso.CourseId
                                select new
@@ -49,6 +50,14 @@ namespace ClasePA.Controllers
                                    RelacionSTC = relacion.StudentID,
                                    relacionId = relacion.EnrrollementId
                                };
+
+
+            //var Join = bd.Enrrollements
+            //   .Include(e => e.Student)
+            //   .Include(c => c.Course).
+            //   ToList();
+
+            //Join;
 
             ViewBag.inner = getInnerJoin;
 
