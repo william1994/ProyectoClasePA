@@ -56,6 +56,7 @@ namespace ClasePA.Controllers
             //   .Include(e => e.Student)
             //   .Include(c => c.Course).
             //   ToList();
+            //Contrains => Like sql
 
             //Join;
 

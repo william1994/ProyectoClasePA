@@ -14,9 +14,7 @@ namespace ClasePA.Models
         public int StudentID { get; set; }
 
         //Esta instancia nos permite poder acceder a la informacion de la tabla course
-        public Course Course { get; set; }
-        //Esta instancia nos permite poder acceder a la informacion de la tabla student
-        public Students Student { get; set; }
+     
 
 
     }
